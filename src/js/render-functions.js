@@ -12,7 +12,6 @@ function displayImages(data, gallery, lightboxGallery) {
       messageSize: '16px',
       messageLineHeight: '1.5',
       backgroundColor: '#ef4040',
-      iconUrl: '/img/error.svg',
       position: 'topRight',
       progressBarColor: '#b51b1b',
     });

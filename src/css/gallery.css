@@ -126,7 +126,3 @@
     box-shadow: -24px 0 #808080, 24px 0 #4e75ff;
   }
 }
-
-.iziToast-close {
-  background-image: url('../img/close.png') !important;
-}
