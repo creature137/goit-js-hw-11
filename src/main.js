@@ -1,3 +1,5 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchImages } from './js/pixabay-api';
@@ -25,8 +27,17 @@ function handleSearch(event) {
 
   fetchImages(query)
     .then(data => displayImages(data, gallery, lightboxGallery))
-    .catch(error => {
-      console.error('Error fetching images:', error);
+    .catch(() => {
+      iziToast.error({
+        message:
+          'An error occurred while fetching data. Please try again later.',
+        messageColor: '#fafafb',
+        messageSize: '16px',
+        messageLineHeight: '1.5',
+        backgroundColor: '#ef4040',
+        position: 'topRight',
+        progressBarColor: '#b51b1b',
+      });
     })
     .finally(() => {
       loader.style.display = 'none';

@@ -8,11 +8,11 @@ function fetchImages(query) {
     safesearch: 'true',
   });
 
-  const fetchUrl = `https://pixabay.com/api?${searchParams}`;
+  const fetchUrl = `https://pixabay.com/api/?${searchParams}`;
 
   return fetch(fetchUrl).then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(response.status);
     }
 
     return response.json();
